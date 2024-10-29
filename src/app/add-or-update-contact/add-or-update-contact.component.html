@@ -1,0 +1,104 @@
+<h2 mat-dialog-title>{{ contact ? "Edit Contact" : "Add New Contact" }}</h2>
+
+<mat-dialog-content [formGroup]="contactForm">
+  <div class="form-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required />
+      <mat-error
+        *ngIf="
+          contactForm.get('name')?.touched && contactForm.get('name')?.invalid
+        "
+      >
+        Name is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" maxlength="10" required />
+      <mat-error
+        *ngIf="
+          contactForm.get('phone')?.touched && contactForm.get('phone')?.invalid
+        "
+      >
+        Enter valid Phone Number
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required />
+      <mat-error
+        *ngIf="
+          contactForm.get('email')?.touched && contactForm.get('email')?.invalid
+        "
+      >
+        Enter valid email
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <textarea
+        matInput
+        formControlName="address"
+        maxlength="30"
+        required
+      ></textarea>
+      <mat-hint align="end"
+        >{{ contactForm.get("address")?.value.length || 0 }}/30</mat-hint
+      >
+      <mat-error
+        *ngIf="
+          contactForm.get('address')?.touched &&
+          contactForm.get('address')?.value.trim() === ''
+        "
+      >
+        Address is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="fill">
+      <mat-label>Position</mat-label>
+      <mat-select formControlName="position" required>
+        <mat-option value="Developer">Developer</mat-option>
+        <mat-option value="Manager">Manager</mat-option>
+        <mat-option value="Product Manager">Product Manager</mat-option>
+        <mat-option value="Quality Assurance Engineer"
+          >Quality Assurance Engineer</mat-option
+        >
+        <mat-option value="Director">Director</mat-option>
+        <mat-option value="Technical Lead">Technical Lead</mat-option>
+      </mat-select>
+      <mat-error
+        *ngIf="
+          contactForm.get('position')?.touched &&
+          contactForm.get('position')?.invalid
+        "
+      >
+        Position is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button
+    mat-button
+    color="primary"
+    [disabled]="!contactForm.valid"
+    (click)="saveContact()"
+  >
+    Save
+  </button>
+</mat-dialog-actions>

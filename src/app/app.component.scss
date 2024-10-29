@@ -1,0 +1,23 @@
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 10px 16px;
+  background: #722bd4;
+  color: #f1f1f1;
+  z-index: 1000;
+}
+
+header img {
+  width: 130px;
+  height: 130px;
+}
+
+header h1 {
+  margin: 0 auto;
+  font-size: 2.5em;
+  text-align: center;
+}

@@ -1,0 +1,27 @@
+.contact-detail-card {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 8px 16px;
+}
+
+.contact-detail-item {
+  display: contents;
+}
+
+.contact-detail-item strong {
+  text-align: right;
+  font-weight: 500;
+}
+
+.contact-detail-item span {
+  padding-left: 8px;
+}
