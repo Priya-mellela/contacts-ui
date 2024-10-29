@@ -1,0 +1,34 @@
+<mat-card class="contact-detail-card">
+  <mat-card-header>
+    <mat-card-title><b>Contact Details</b></mat-card-title>
+  </mat-card-header>
+  <br />
+  <mat-card-content>
+    <div class="contact-detail-grid">
+      <div class="contact-detail-item">
+        <strong>Name:</strong>
+        <span>{{ data.name }}</span>
+      </div>
+      <div class="contact-detail-item">
+        <strong>Phone Number:</strong>
+        <span>{{ data.phone }}</span>
+      </div>
+      <div class="contact-detail-item">
+        <strong>Email:</strong>
+        <span>{{ data.email }}</span>
+      </div>
+      <div class="contact-detail-item">
+        <strong>Address:</strong>
+        <span>{{ data.address }}</span>
+      </div>
+      <div class="contact-detail-item">
+        <strong>Position:</strong>
+        <span>{{ data.position }}</span>
+      </div>
+      <div class="contact-detail-item">
+        <strong>Created Date:</strong>
+        <span>{{ data.createdDate | date }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

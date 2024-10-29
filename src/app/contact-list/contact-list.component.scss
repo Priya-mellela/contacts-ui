@@ -1,0 +1,60 @@
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.snackbar-success {
+  background-color: green;
+  color: white;
+}
+
+.snackbar-error {
+  background-color: red;
+  color: white;
+}
+
+.table-wrapper {
+  max-height: 700px;
+  overflow-y: auto;
+  position: relative;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+th {
+  position: sticky;
+  top: 0;
+  background-color: rgb(99, 95, 95);
+  z-index: 10;
+  padding: 16px;
+  text-align: left;
+}
+td {
+  padding: 16px;
+}
+
+.mat-header-row {
+  height: 56px;
+}
+
+.mat-row {
+  height: 48px;
+}
+.subheader-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  justify-content: center;
+}
+.mat-button {
+  margin-right: 16px;
+}
+
+.search-box {
+  width: 300px;
+}
